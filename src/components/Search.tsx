@@ -35,7 +35,7 @@ const Search = (props: any) => {
       <Button data-testid="search-button" disabled={!userName} onClick={() => handleSearch()} variant="primary" size="sm">
         Search
       </Button>
-      <Button onClick={() => fetchData()} variant="primary" size="sm">
+      <Button onClick={() => fetchData()} variant="success" size="sm">
         Reload
       </Button>
     </div>

@@ -13,7 +13,7 @@ const Posts = (props: { posts: any }) => {
     <div>
       {posts?.length > 0 ? (
         <div className="mt-3">
-          {posts.map((post: any, i: Number) => {
+          {posts.map((post: any) => {
             return (
               <div key={post?.id} data-testid="post-card">
                 <Post data-testid="card" post={post} link={`/post/${post.id}`} className="my-4" />

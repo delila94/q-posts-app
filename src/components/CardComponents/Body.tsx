@@ -4,19 +4,13 @@ import { MyContext } from "../../context/context";
 const Body = (props: {
   backgroundColor?: "grey" | "pink" | "lightGrey" | "transparent";
   children?: string;
-  title: string;
-  titleFontsize?: "text-sm" | "text-xs" | "text-lg" | "text-xl" | "text-base";
   bodyFontSize?: "text-sm" | "text-xs" | "text-lg" | "text-xl" | "text-base";
   bodyFontWeight?: "normal" | "bold" | "extrabold" | "black" | "medium" | "light" | "extralight" | "thin" |'semibold';
-  titleFontWeight?: "normal" | "bold" | "extrabold" | "black" | "medium" | "light" | "extralight" | "thin" | 'semibold';
   p?:Number,
   className?:string;
 }) => {
   const {
-    title,
     children,
-    titleFontsize = "text-base",
-    titleFontWeight = "bold",
     bodyFontSize = "xs",
     backgroundColor = "transparent",
     bodyFontWeight = "normal",
@@ -38,9 +32,6 @@ const Body = (props: {
       } ${backgroundColor === "transparent" && "bg-transparent "} `+ className}
       {...rest}
     >
-      <div className={`mb-2 font-${titleFontWeight} ${titleFontsize} `}>
-        {title}
-      </div>
       <div
         className={`text-${bodyFontSize} font-${bodyFontWeight} text-neutral-600 items-start flex justify-start`}
       >

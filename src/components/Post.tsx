@@ -6,6 +6,7 @@ import withLoading from "../functions/withLoading";
 import { MyContext } from "../context/context";
 import Footer from "./CardComponents/Footer";
 import { IComment } from "../types.posts";
+import MainTitle from "./BasicComponents/MainTitle";
 
 const CommentsWithLoading = withLoading(Comments);
 
@@ -55,7 +56,8 @@ const Post = (props: { post: any; link?: string; className?: string }) => {
           link={link}
           data-testid="post-header"
         />
-        <Body className="m-6" title={post?.title} data-testid="post-body">
+        <MainTitle className="m-4" fontSize="text-base" fontWeight="bold">{post.title}</MainTitle>
+        <Body className="m-6" data-testid="post-body">
           {post?.body}
         </Body>
         <Footer

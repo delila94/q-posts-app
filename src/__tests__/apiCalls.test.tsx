@@ -14,7 +14,7 @@ describe("testing components", () => {
     const { getByTestId } = render(<Post post={mockPosts[0]} />);
     const div = await waitFor(() => getByTestId("post-body"));
     expect(div).toHaveTextContent(
-      "sunt aut facere repellat provident occaecati excepturi optio reprehenderitquia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+      "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
     );
   });
   it("test header component", async () => {

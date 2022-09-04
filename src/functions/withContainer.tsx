@@ -5,7 +5,7 @@ function withContainer(Component: any) {
     const { title, ...otherProps } = props;
     return (
       <div className="max-w-5xl ma m-auto">
-        <MainTitle data-testid="title" fontWeight="font-bold"
+        <MainTitle data-testid="title" fontWeight="bold"
         fontSize="text-3xl"
         m={3}
         color={"text-gray-700"}>{title}</MainTitle>
