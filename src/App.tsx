@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+import SinglePost from "./pages/SinglePost";
+import BlogPosts from "./pages/BlogPosts";
+import MyContextProvider from "./context/context";
+import withContainer from "./functions/withContainer";
+import {BrowserRouter} from "react-router-dom";
+
+const BlogPostsWithContainer = withContainer(BlogPosts);
+const SinglePostWithContainer = withContainer(SinglePost);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <MyContextProvider>
+      <Routes>
+      <Route path="/" element={<Navigate replace to="/posts" />} />
+        <Route
+          path="/posts"
+          element={<BlogPostsWithContainer title={"List of all posts"} />}
+        />
+        <Route
+          path="/post/:id"
+          element={<SinglePostWithContainer title={"Single Post"} />}
+        />
+      </Routes>
+    </MyContextProvider>
+    </BrowserRouter>
   );
 }
 
